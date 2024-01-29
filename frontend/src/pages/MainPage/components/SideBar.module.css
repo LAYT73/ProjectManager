@@ -1,0 +1,175 @@
+.sidebar {
+    background-color: #f9fafb;
+    width: 20%;
+    min-width: 290px;
+    height: 100vh;
+    padding: 20px 20px 20px 24px;
+}
+
+.sidebar_logo {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+.sidebar_logo_img {
+    height: 54px;
+}
+
+.sidebar_logo h2 {
+    color: #98a2b3;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.sidebar_add {
+    width: 100%;
+    margin-top: 24px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sidebar_add button {
+    min-width: 28px;
+    min-height: 28px;
+    border: none;
+    border-radius: 8px;
+    background: var(--Gray-200, #EAECF0);
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    margin-left: 12px;
+    padding: 0;
+}
+
+.sidebar_add h3 {
+    width: 80%;
+    color: #98a2b3;
+    height: 100%;
+    display: flex;
+    font-weight: 600;
+    align-items: center;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.modalBody {
+    padding: 0 24px 24px 24px;
+}
+
+.modalBody input {
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.modalBody h5 {
+    text-align: left;
+    color: var(--Gray-700, #344054);
+    /* Text sm/Medium */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    margin-bottom: 6px;
+}
+
+.modalFooter {
+    padding: 16px 24px;
+}
+
+.modalFooter_buttons {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+}
+
+.modalFooter_buttons button {
+    width: max-content;
+    margin: 0;
+    margin-left: 8px;
+}
+
+.modalFooter_buttons_cancel {
+    background-color: white;
+    color: var(--Gray-700, #344054);
+    /* Text sm/Semibold */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
+}
+
+.sidebar_groups {
+
+}
+
+.sidebar_groups_el {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 24px;
+    padding: 8px 12px;
+}
+
+.sidebar_groups_el:hover {
+    border-radius: 8px;
+    background: var(--Gray-100, #F2F4F7);
+}
+
+.sidebar_groups_el_icon {
+    min-width: 28px;
+    min-height: 28px;
+    border: none;
+    border-radius: 8px;
+    background: var(--Gray-400, #98A2B3);
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar_groups_el_vert {
+    min-width: 28px;
+    min-height: 28px;
+    border: none;
+    border-radius: 8px;
+    background: none;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar_groups_el h3 {
+    color: var(--Gray-500, #667085);
+    /* Text sm/Medium */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 142.857% */
+    margin-left: 8px;
+    width: 90%;
+    text-align: left;
+}
+
+.sidebar_add_button {
+    margin-right: 12px !important;
+}
+
+.sidebar_groups_el_vert {
+    display: none;
+  }
+  
+  /* Показываем иконку вертикального меню, когда курсор находится над родительским элементом */
+  .sidebar_groups_el:hover .sidebar_groups_el_vert {
+    display: block;
+  }
