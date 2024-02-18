@@ -8,6 +8,7 @@ const Routing = () => {
   return (
     <>
         <Routes>
+            <Route path='/' element={<AuthPage/>}/>
             <Route path='/main/:id/*' element={<MainPage/>}/>
             <Route path='/auth' element={<AuthPage/>}/>
             <Route path='/registration' element={<RegistrationPage/>}/>

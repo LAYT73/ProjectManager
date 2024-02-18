@@ -1,5 +1,5 @@
 .body {
-    padding: 24px 32px 24px 60px;
+    padding: 24px 32px 24px 100px;
 }
 
 .body_header {
@@ -33,6 +33,10 @@
     height: 32px;
     justify-content: center;
     align-items: center;
+}
+
+.body_header_info_brief img {
+    width: 60%;
 }
 
 .body_header_info_status {

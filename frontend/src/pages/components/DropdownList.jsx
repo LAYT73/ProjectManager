@@ -1,17 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Dropdown.module.css';
 
-const Dropdown = ({isOpen, setIsOpen, elems}) => {
+const DropdownList = ({isOpen, setIsOpen, elems, index, length}) => {
     const dropdownRef = useRef(null);
 
     const handleItemClick = (item) => {
         console.log(`Выбран элемент: ${item}`);
-        setIsOpen(false);
+        const array = [...isOpen];
+        const element = array[index]
+        array[index] = {
+            isOpen: !element,
+        }
+        setIsOpen(array)
     };
 
     const handleClickOutside = (event) => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-            setIsOpen(false);
+            const array = [];
+            for (let i = 0; i < length; i++) {
+                array[i] = {
+                    isOpen: false,
+                }
+            }
+            setIsOpen(array);
         }
     };
 
@@ -24,7 +35,7 @@ const Dropdown = ({isOpen, setIsOpen, elems}) => {
 
 return (<>
     <div ref={dropdownRef} className={styles.dropdownWrapper}>
-        {isOpen && (
+        { isOpen[index]?.isOpen && (
             <div className={styles.dropdownContent}>
                 {elems?.map((el,i)=>{
                     return (
@@ -45,4 +56,4 @@ return (<>
 </>);
 };
 
-export default Dropdown;
+export default DropdownList;

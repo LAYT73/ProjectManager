@@ -1,3 +1,8 @@
+select {
+    margin: 0 !important;
+}
+
+
 .sidebar {
     background-color: #f9fafb;
     width: 20%;
@@ -108,15 +113,25 @@
 }
 
 .sidebar_groups {
-
+    margin-top: 24px;
 }
 
 .sidebar_groups_el {
     display: flex;
     align-items: center;
     justify-content: start;
-    margin-top: 24px;
+    margin-top: 8px;
     padding: 8px 12px;
+}
+
+.sidebar_groups_el_active {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--Gray-100, #F2F4F7);
 }
 
 .sidebar_groups_el:hover {
@@ -141,18 +156,20 @@
     min-height: 28px;
     border: none;
     border-radius: 8px;
-    background: none;
+    background: #EAECF0;
     width: 28px;
     height: 28px;
     margin: 0;
     padding: 0;
+    align-items: center;
+    justify-content: center;
 }
 
-.sidebar_groups_el h3 {
+.sidebar_groups_el h3, .sidebar_groups_el_active h3 {
     color: var(--Gray-500, #667085);
     /* Text sm/Medium */
     font-family: Inter;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 18px; /* 142.857% */
@@ -170,6 +187,50 @@
   }
   
   /* Показываем иконку вертикального меню, когда курсор находится над родительским элементом */
-  .sidebar_groups_el:hover .sidebar_groups_el_vert {
-    display: block;
+  .sidebar_groups_el:hover .sidebar_groups_el_vert, .sidebar_groups_el_active:hover .sidebar_groups_el_vert {
+    display: flex;
   }
+
+  .rotate_triangle {
+    transform: rotate(-90deg);
+  }
+
+.sidebar_folders {
+    margin-top: 0px;
+}
+
+.sidebar_folders_el {
+    margin-top: 8px;
+    min-height: 44px;
+    max-height: 44px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.sidebar_folders_el_img {
+    min-width: 28px;
+    min-height: 28px;
+    border: none;
+    border-radius: 8px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar_folders_el h3 {
+    color: var(--Gray-500, #667085);
+    /* Text sm/Medium */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 142.857% */
+    margin-left: 8px;
+    width: 90%;
+    text-align: left;
+}

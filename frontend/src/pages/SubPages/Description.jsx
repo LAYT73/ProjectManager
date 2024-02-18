@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Description.module.css'
 import Rocket from './../../assets/rocket.svg'
 import X from './../../assets/x-g.svg';
+import DescriptionBody from './components/DescriptionBody';
 
 const Description = () => {
   return (
@@ -14,6 +15,7 @@ const Description = () => {
             </div>
             <img src={X} alt="" />
         </div>
+        <DescriptionBody/>
     </div>
   )
 }

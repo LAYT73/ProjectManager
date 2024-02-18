@@ -93,3 +93,27 @@
     line-height: 20px; /* 142.857% */
     margin-left: 4px;
 }
+
+.container_wind_google {
+    background-color: white;
+    color: #98A2B3;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+}
+
+.container_wind_google img {
+    margin-right: 12px;
+}
+
+.container_wind_google strong {
+    margin-left: 4px;
+    color: #344054;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+}

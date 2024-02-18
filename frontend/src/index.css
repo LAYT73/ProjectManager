@@ -28,7 +28,7 @@
   color: #667085;
 }
 
-input {
+input, select {
   width: 100%;
   background-color: white;
   border-radius: 8px;
@@ -86,7 +86,7 @@ input[type="checkbox"]:checked {
 }
 
 
-input:focus {
+input:focus, select:focus {
   outline: none;
   border: 1px solid  #D6BBFB;
   outline: 4px solid #f4ebff;
