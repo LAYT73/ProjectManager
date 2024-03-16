@@ -43,13 +43,13 @@ services:
       - linetask-network
       - postgresql-network
 
-  # frontend: 
-  #   images: ghcr.io/layt73/projectmanager/frontend:latest
-  #   restart: on-failure
-  #   environment:
-  #     VITE_API_URL: http://api:3000/
-  #   networks:
-  #     - linetask-network
+  frontend: 
+    images: ghcr.io/layt73/projectmanager/frontend:latest
+    restart: on-failure
+    environment:
+      VITE_API_URL: http://api:3000/
+    networks:
+      - linetask-network
 
 volumes:
   postgres-data:
