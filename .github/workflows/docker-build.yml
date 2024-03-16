@@ -24,10 +24,10 @@ jobs:
           echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
 
       # Build and push frontend image
-      #- name: Build Frontend Docker Image
-      #  run: docker build -t ghcr.io/${{ github.repository }}/frontend:latest ./frontend
-      #- name: Push Frontend Docker Image
-      #  run: docker push ghcr.io/${{ github.repository }}/frontend:latest
+      - name: Build Frontend Docker Image
+        run: docker build -t ghcr.io/${{ github.repository }}/frontend:latest ./frontend
+      - name: Push Frontend Docker Image
+        run: docker push ghcr.io/${{ github.repository }}/frontend:latest
 
       # Build and push API image
       - name: Build API Docker Image
