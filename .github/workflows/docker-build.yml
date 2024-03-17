@@ -25,7 +25,7 @@ jobs:
 
       # Build and push frontend image
       - name: Build Frontend Docker Image
-        run: docker build -t ghcr.io/${{ github.repository }}/frontend:latest ./frontend
+        run: docker build -t ghcr.io/${REPO}/frontend:latest ./frontend
       - name: Push Frontend Docker Image
         run: docker push ghcr.io/${{ github.repository }}/frontend:latest
 
