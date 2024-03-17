@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react'
 import styles from "./History.module.css"
 import X from "./../../../assets/x.svg"
-import Avatar from './../../../assets/avatar.png'
+import Avatar from './../../../assets/Avatar.png'
 
 const History = ({ isOpen, setIsOpen }) => {
     const dropdownRef = useRef(null);

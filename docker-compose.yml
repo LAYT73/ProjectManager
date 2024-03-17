@@ -1,0 +1,61 @@
+version: '3.1'
+
+services:
+  nginx:
+    image: nginx:latest
+    restart: on-failure
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - /etc/letsencrypt/live/linetask.ru/fullchain.pem:/etc/nginx/certs:ro
+      - /etc/letsencrypt/live/linetask.ru/privkey.pem:/etc/nginx/private:ro
+    networks:
+      - linetask-network
+
+  postgres:
+    image: postgres:latest
+    restart: on-failure
+    environment:
+      POSTGRES_DB: linetask
+      POSTGRES_USER: linetask
+      POSTGRES_PASSWORD: linetask
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - postgresql-network
+  
+  api:
+    image: ghcr.io/layt73/projectmanager/api:latest
+    restart: on-failure
+    environment:
+      DATABASE_USER: linetask
+      DATABASE_PASSWORD: linetask
+      DATABASE_PORT: 5432
+      DATABASE_HOST: postgres
+      DATABASE_DB: linetask
+    ports:
+      - "3000:3000"
+    networks:
+      - linetask-network
+      - postgresql-network
+
+  frontend: 
+    images: ghcr.io/layt73/projectmanager/frontend:latest
+    restart: on-failure
+    environment:
+      VITE_API_URL: http://api:3000/
+    networks:
+      - linetask-network
+
+volumes:
+  postgres-data:
+
+networks:
+  linetask-network:
+    driver: bridge
+  postgresql-network:
+    driver: bridge
