@@ -9,7 +9,7 @@ import Bullets from "./../../../assets/Bullets.svg"
 import Numering from "./../../../assets/Numering.svg"
 import DropdownList from '../../components/DropdownList'
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import DropdownRow from '../../components/Dropdownrow'
+import DropdownRow from '../../components/DropdownRow'
 
 const DescriptionBody = () => {
   const [isHovered, setIsHovered] = useState(false);
