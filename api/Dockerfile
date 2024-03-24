@@ -1,10 +1,9 @@
-FROM node:20.10.0
+FROM node:20-alpine
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm install -g npm@10.2.3
 RUN npm install
 COPY . .
 RUN npm run build
-
-CMD ["npm", "run", "start"]
+EXPOSE 3000
+CMD ["npm", "run", "start:prod"]
