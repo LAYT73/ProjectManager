@@ -3,16 +3,18 @@ import styles from './MainPage.module.css'
 import SideBar from './components/SideBar'
 import Header from './components/Header'
 import Body from './components/Body'
+import { useNavigate } from 'react-router-dom'
 
 const MainPage = () => {
   const profile = localStorage.getItem("profile");
   const [activeProject, setActiveProject] = useState(null);
   const [activeProjecIndex, setActiveProjectIndex] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(()=>{
     
     if (!profile) {
-      window.location.href = "http://localhost:5173/auth";
+      navigate('/auth')
     }
   },[]);
 

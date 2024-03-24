@@ -42,14 +42,16 @@ services:
     networks:
       - linetask-network
       - postgresql-network
+    depends_on:
+      - postgres
 
   frontend: 
     image: ghcr.io/layt73/projectmanager/frontend:latest
     restart: on-failure
-    environment:
-      VITE_API_URL: http://api:3000/
     networks:
       - linetask-network
+    ports:
+      - "8080:80"
 
 volumes:
   postgres-data:

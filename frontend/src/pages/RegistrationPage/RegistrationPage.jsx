@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './RegistrationPage.module.css';
 import Window from '../components/Window';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios"
 
 const RegistrationPage = () => {
@@ -11,10 +11,11 @@ const RegistrationPage = () => {
   const [username, setUsername] = useState("");
   const [checkbox, setCheckbox] = useState(false);
   const profile = localStorage.getItem("profile");
+  const navigate = useNavigate();
 
   useEffect(()=>{
     if (profile) {
-      window.location.href = "http://localhost:5173/main/1/description";
+      navigate(`/main/${JSON.parse(profile).username}/description`);
     }
   },[]);
 
@@ -33,8 +34,8 @@ const RegistrationPage = () => {
         localStorage.setItem("profile", JSON.stringify(data));
         localStorage.setItem("refreshToken", data.refreshToken);
         localStorage.setItem("accessToken", data.accessToken);
-        window.location.href = "http://localhost:5173/main/1";
-      };
+        navigate(`/main/${data.username}`);
+      }
     }).catch((err)=>{
       console.error(err);
     })
